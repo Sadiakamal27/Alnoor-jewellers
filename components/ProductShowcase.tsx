@@ -1,0 +1,141 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { products } from "@/lib/data";
+
+interface ProductCardProps {
+  product: (typeof products)[0];
+}
+
+function ProductCard({ product }: ProductCardProps) {
+  const [api, setApi] = useState<any>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+
+    setCurrent(api.selectedScrollSnap());
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  return (
+    <Card className="group bg-[#f5f5f5] border-0 shadow-none transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+      {/* Inner Image Carousel */}
+      <div className="relative h-[420px] flex items-center justify-center">
+        <Carousel setApi={setApi} opts={{ loop: true }} className="w-full">
+          <CarouselContent>
+            {product.images.map((img, index) => (
+              <CarouselItem key={index} className="flex justify-center">
+                <div className="relative h-[360px] w-full">
+                  <Image
+                    src={img}
+                    alt={product.name}
+                    fill
+                    className="object-contain"
+                    priority={index === 0}
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+          <CarouselPrevious className="left-2 bg-transparent border-0 shadow-none text-gray-500 hover:text-black" />
+          <CarouselNext className="right-2 bg-transparent border-0 shadow-none text-gray-500 hover:text-black" />
+        </Carousel>
+      </div>
+
+      {/* Slide Indicator */}
+      <div className="flex justify-center gap-2 py-4">
+        {product.images.map((_, index) => (
+          <div
+            key={index}
+            className={`h-[3px] rounded-full transition-all duration-300 ${
+              current === index ? "w-10 bg-black" : "w-3 bg-gray-300"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Content */}
+      <CardContent className="text-center pb-6">
+        <h3 className="text-lg tracking-wide text-gray-900 mb-1">
+          {product.name.toUpperCase()}
+        </h3>
+
+        <p className="text-sm text-gray-500 mb-3">{product.sku}</p>
+
+        <p className="text-lg font-semibold" style={{ color: "#c8a97e" }}>
+          {product.price}
+        </p>
+
+        {/* Hover Button */}
+        <div className="max-h-0 overflow-hidden group-hover:max-h-20 transition-all duration-500">
+          <Link href={`/product/${product.slug}`}>
+            <Button
+              className="mt-6 w-full text-white text-sm tracking-widest uppercase"
+              style={{ backgroundColor: "#c8a97e" }}
+            >
+              Discover More
+            </Button>
+          </Link>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+export default function ProductShowcase() {
+  return (
+    <section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section heading */}
+        <div className="text-center mb-10">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#c8a97e] mb-2">
+            New Arrivals
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Our Collections
+          </h2>
+          <div className="w-10 h-px bg-[#c8a97e] mx-auto" />
+        </div>
+
+        {/* Outer Carousel (Cards Slider) */}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-6">
+            {products.map((product) => (
+              <CarouselItem
+                key={product.id}
+                className="pl-6 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+              >
+                <ProductCard product={product} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+          {/* Outer Arrows */}
+          <CarouselPrevious className="-left-12 bg-black text-white border-0 hover:bg-gray-800 hidden md:flex" />
+          <CarouselNext className="-right-12 bg-black text-white border-0 hover:bg-gray-800 hidden md:flex" />
+        </Carousel>
+      </div>
+    </section>
+  );
+}
