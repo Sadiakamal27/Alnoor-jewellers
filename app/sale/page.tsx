@@ -91,9 +91,9 @@ function ProductCard({ product }: { product: Product }) {
 
         {/* Quick Add Overlay */}
         <div className="absolute bottom-4 left-4 right-4 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-          <button className="w-full bg-white/95 backdrop-blur-sm text-gray-900 py-3 text-[10px] font-bold tracking-[0.2em] uppercase shadow-lg hover:bg-[#c8a97e] hover:text-white transition-colors border-none">
+          <div className="w-full bg-white/95 backdrop-blur-sm text-gray-900 py-3 text-[10px] font-bold tracking-[0.2em] uppercase shadow-lg hover:bg-[#c8a97e] hover:text-white transition-colors border-none text-center flex items-center justify-center cursor-pointer">
             View Details
-          </button>
+          </div>
         </div>
       </div>
 

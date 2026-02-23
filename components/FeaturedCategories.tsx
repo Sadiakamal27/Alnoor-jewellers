@@ -8,20 +8,32 @@ const categories = [
   {
     id: 1,
     name: "Gold Sets",
-    image: "/c1.png",
-    href: "/collections?category=Gold Sets",
+    image: "/gold-sets/Ornate Elegance Gold Set.png",
+    href: "/collections?category=Gold+Sets",
   },
   {
     id: 2,
     name: "Bridal Sets",
-    image: "/c2.png",
-    href: "/collections?category=Bridal Sets",
+    image: "/bridal-sets/Timeless Elegance Bridal Set.png",
+    href: "/collections?category=Bridal+Sets",
   },
   {
     id: 3,
     name: "Bangles & Kara",
-    image: "/c3.png",
-    href: "/collections?category=Bangles & Kara",
+    image: "/bangles-kara/golden-crown-bangles.png",
+    href: "/collections?category=Bangles+%26+Kara",
+  },
+  {
+    id: 4,
+    name: "Mala Sets",
+    image: "/mala-sets/Celestial Bloom Mala.png",
+    href: "/collections?category=Mala+Sets",
+  },
+  {
+    id: 5,
+    name: "Chain & Locket Sets",
+    image: "/chain-locket-sets/Royal Pendant Chain.png",
+    href: "/collections?category=Chain+%26+Locket+Sets",
   },
 ];
 
@@ -39,10 +51,42 @@ export default function FeaturedCategories() {
           <div className="w-10 h-px bg-[#c8a97e] mx-auto" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {categories.map((category) => (
+        {/* Top row: 3 categories */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-6 lg:mb-8">
+          {categories.slice(0, 3).map((category) => (
             <Link key={category.id} href={category.href}>
               <Card className="relative group overflow-hidden rounded-none border-0 cursor-pointer h-[400px] shadow-none">
+                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+                  <Image
+                    src={category.image}
+                    alt={category.name}
+                    fill
+                    className="object-cover"
+                  />
+                  {/* Subtle overlay */}
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
+                </div>
+
+                {/* Text content */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+                  <h3 className="text-2xl font-bold text-white uppercase tracking-widest drop-shadow-lg mb-4">
+                    {category.name}
+                  </h3>
+                  <div className="w-8 h-px bg-white group-hover:w-16 transition-all duration-500 mb-4" />
+                  <span className="text-[10px] text-white/0 group-hover:text-white/100 uppercase tracking-[0.3em] transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+                    Discover More
+                  </span>
+                </div>
+              </Card>
+            </Link>
+          ))}
+        </div>
+
+        {/* Bottom row: 2 categories (wider) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {categories.slice(3, 5).map((category) => (
+            <Link key={category.id} href={category.href}>
+              <Card className="relative group overflow-hidden rounded-none border-0 cursor-pointer h-[320px] shadow-none">
                 <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
                   <Image
                     src={category.image}

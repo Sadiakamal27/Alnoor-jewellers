@@ -11,7 +11,7 @@ export default function AboutPage() {
       <section className="relative h-[60vh] bg-gray-900 flex items-center justify-center text-center px-4">
         <div className="absolute inset-0 opacity-50">
           <Image
-            src="/Gold-bracelet.jpg"
+            src="/bridal-sets/Eternal Glow Bridal Set.png"
             alt="About Alnoor"
             fill
             className="object-cover"
@@ -37,7 +37,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-square">
             <Image
-              src="/Gold-bracelet.jpg"
+              src="/bridal-sets/Eternal Glow Bridal Set.png"
               alt="Crafstmanship"
               fill
               className="object-cover shadow-2xl"

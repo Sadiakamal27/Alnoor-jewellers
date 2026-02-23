@@ -15,26 +15,26 @@ const heroImages = [
   {
     id: 1,
     image: "/j1.png",
-    title: "Moissanite Diamonds",
+    title: "Heritage Bridal Collection",
     subtitle: "Timeless Elegance",
     description:
-      "Discover our exclusive collection of moissanite diamonds crafted with precision.",
+      "Experience the grandeur of royalty with our hand-picked heritage bridal pieces.",
   },
   {
     id: 2,
     image: "/j2.png",
-    title: "Royal Collection",
+    title: "Exquisite Gold Sets",
     subtitle: "Magnificent Luxury",
     description:
-      "Experience the grandeur of royalty with our hand-picked heritage pieces.",
+      "Discover our exclusive collection of gold sets crafted with passion and precision.",
   },
   {
     id: 3,
     image: "/j3.png",
-    title: "Sparkling Elegance",
+    title: "Timeless Mala Designs",
     subtitle: "Classic Grace",
     description:
-      "Find the perfect piece to complement your style and make a statement.",
+      "Find the perfect mala set to complement your style and make a statement.",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function HeroBanner() {
                           Explore Now
                         </Button>
                       </Link>
-                      <Link href="https://wa.me/923001234567" target="_blank">
+                      <Link href="https://wa.me/19059040067" target="_blank">
                         <Button
                           variant="outline"
                           className="px-8 py-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-white border-white bg-transparent hover:bg-white hover:text-black transition-all duration-300"

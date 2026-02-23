@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 import { ShoppingCart, User, Menu, X, Search, ChevronDown } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { categories } from "@/lib/data";
@@ -10,8 +11,20 @@ import { categories } from "@/lib/data";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isJwrOpen, setIsJwrOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const { openCart, totalItems } = useCart();
+  const router = useRouter();
   const headerRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/collections?search=${encodeURIComponent(searchQuery)}`);
+      setIsSearchOpen(false);
+    }
+  };
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -97,7 +110,7 @@ export default function Header() {
                 {categories.map((cat) => (
                   <Link
                     key={cat}
-                    href={`/collections?category=${cat}`}
+                    href={`/collections?category=${encodeURIComponent(cat)}`}
                     onClick={() => setIsJwrOpen(false)}
                     className="block px-6 py-2.5 text-xs tracking-widest uppercase text-gray-600 hover:bg-gray-50 hover:text-[#c8a97e] transition-colors"
                   >
@@ -137,12 +150,38 @@ export default function Header() {
 
           {/* Right icons */}
           <div className="flex items-center gap-3">
+            {/* Search Bar */}
+            <div
+              className={`flex items-center transition-all duration-300 ${isSearchOpen ? "w-48 sm:w-64 opacity-100" : "w-0 opacity-0 overflow-hidden"}`}
+            >
+              <form onSubmit={handleSearch} className="w-full relative">
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  placeholder="Search gems..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full bg-gray-50 border border-gray-100 rounded-full py-1.5 px-4 text-xs focus:outline-none focus:border-[#c8a97e] transition-all"
+                />
+              </form>
+            </div>
+
             <Button
               variant="ghost"
               size="icon"
-              className="hidden sm:inline-flex hover:text-[#c8a97e]"
+              className="hover:text-[#c8a97e]"
+              onClick={() => {
+                setIsSearchOpen(!isSearchOpen);
+                if (!isSearchOpen) {
+                  setTimeout(() => searchInputRef.current?.focus(), 100);
+                }
+              }}
             >
-              <Search className="h-5 w-5" />
+              {isSearchOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Search className="h-5 w-5" />
+              )}
             </Button>
             <Button
               variant="ghost"
@@ -202,7 +241,7 @@ export default function Header() {
                 {categories.map((cat) => (
                   <Link
                     key={cat}
-                    href={`/collections?category=${cat}`}
+                    href={`/collections?category=${encodeURIComponent(cat)}`}
                     onClick={() => setIsMenuOpen(false)}
                     className="text-xs text-gray-600 py-1 hover:text-[#c8a97e]"
                   >

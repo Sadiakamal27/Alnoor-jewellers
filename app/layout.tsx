@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import FloatingReviews from "@/components/FloatingReviews";
 import { CartProvider } from "@/context/CartContext";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({
           <Footer />
           <CartDrawer />
           <FloatingReviews />
+          <Toaster />
         </CartProvider>
       </body>
     </html>

@@ -4,53 +4,66 @@ import Image from "next/image";
 import Link from "next/link";
 
 const galleryImages = [
+  // Gold Sets
   {
     id: 1,
-    image: "/j1.png",
-    title: "Heritage Bridal Set",
-    category: "Bridal",
+    image: "/gold-sets/Crown Jewel Gold Set.png",
+    title: "Crown Jewel Gold Set",
+    category: "Gold Sets",
+    href: "/collections?category=Gold+Sets",
   },
   {
     id: 2,
-    image: "/j2.png",
-    title: "Royal Wedding Nath",
-    category: "Wedding",
+    image: "/gold-sets/Majestic Aura Gold Set.png",
+    title: "Majestic Aura Gold Set",
+    category: "Gold Sets",
+    href: "/collections?category=Gold+Sets",
   },
+  // Bridal Sets
   {
     id: 3,
-    image: "/j3.png",
-    title: "Gold Plated Jhumkas",
-    category: "Classic",
+    image: "/bridal-sets/Celestial Charm Bridal Set.png",
+    title: "Celestial Charm Bridal Set",
+    category: "Bridal Sets",
+    href: "/collections?category=Bridal+Sets",
   },
   {
     id: 4,
-    image: "/Gold-bracelet.jpg",
-    title: "Modern Gold Bracelet",
-    category: "Handwear",
+    image: "/bridal-sets/Queen's Grace Bridal Set.png",
+    title: "Queen's Grace Bridal Set",
+    category: "Bridal Sets",
+    href: "/collections?category=Bridal+Sets",
   },
+  // Bangles & Kara
   {
     id: 5,
-    image: "/j1.png",
-    title: "Exquisite Choker",
-    category: "Necklace",
+    image: "/bangles-kara/golden-queen-bangles.png",
+    title: "Golden Queen Bangles",
+    category: "Bangles & Kara",
+    href: "/collections?category=Bangles+%26+Kara",
   },
   {
     id: 6,
-    image: "/j2.png",
-    title: "Wedding Bangles",
-    category: "Bridal",
+    image: "/bangles-kara/heritage-bride-bangles.png",
+    title: "Heritage Bride Bangles",
+    category: "Bangles & Kara",
+    href: "/collections?category=Bangles+%26+Kara",
   },
+  // Mala Sets
   {
     id: 7,
-    image: "/j3.png",
-    title: "Premium Mala Set",
-    category: "Royal",
+    image: "/mala-sets/Queen's Grace Mala.png",
+    title: "Queen's Grace Mala",
+    category: "Mala Sets",
+    href: "/collections?category=Mala+Sets",
   },
+  // Chain & Locket Sets
   {
     id: 8,
-    image: "/Gold-bracelet.jpg",
-    title: "Engagement Ring",
-    category: "Jewelry",
+    image: "/chain-locket-sets/Elegant Gold Chain & Locket.png",
+    title: "Elegant Gold Chain & Locket",
+    category: "Chain & Locket Sets",
+    href: "/collections?category=Chain+%26+Locket+Sets",
   },
 ];
 
@@ -72,37 +85,37 @@ export default function WeddingGallery() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Column 1 */}
           <div className="flex flex-col gap-4">
-            <Link href="/collections" className="block">
+            <Link href={galleryImages[0].href} className="block">
               <GalleryCard image={galleryImages[0]} aspect="aspect-[3/4]" />
             </Link>
-            <Link href="/collections" className="block">
+            <Link href={galleryImages[1].href} className="block">
               <GalleryCard image={galleryImages[1]} aspect="aspect-square" />
             </Link>
           </div>
           {/* Column 2 */}
           <div className="flex flex-col gap-4">
-            <Link href="/collections" className="block">
+            <Link href={galleryImages[2].href} className="block">
               <GalleryCard image={galleryImages[2]} aspect="aspect-square" />
             </Link>
-            <Link href="/collections" className="block">
+            <Link href={galleryImages[3].href} className="block">
               <GalleryCard image={galleryImages[3]} aspect="aspect-[3/4]" />
             </Link>
           </div>
           {/* Column 3 */}
           <div className="flex flex-col gap-4 pt-8">
-            <Link href="/collections" className="block">
+            <Link href={galleryImages[4].href} className="block">
               <GalleryCard image={galleryImages[4]} aspect="aspect-[3/4]" />
             </Link>
-            <Link href="/collections" className="block">
+            <Link href={galleryImages[5].href} className="block">
               <GalleryCard image={galleryImages[5]} aspect="aspect-square" />
             </Link>
           </div>
           {/* Column 4 */}
           <div className="flex flex-col gap-4 pt-8">
-            <Link href="/collections" className="block">
+            <Link href={galleryImages[6].href} className="block">
               <GalleryCard image={galleryImages[6]} aspect="aspect-square" />
             </Link>
-            <Link href="/collections" className="block">
+            <Link href={galleryImages[7].href} className="block">
               <GalleryCard image={galleryImages[7]} aspect="aspect-[3/4]" />
             </Link>
           </div>
@@ -112,7 +125,13 @@ export default function WeddingGallery() {
   );
 }
 
-function GalleryCard({ image, aspect }: { image: any; aspect: string }) {
+function GalleryCard({
+  image,
+  aspect,
+}: {
+  image: (typeof galleryImages)[0];
+  aspect: string;
+}) {
   return (
     <div
       className={`relative overflow-hidden group ${aspect} bg-gray-50 border border-gray-100`}

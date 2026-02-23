@@ -9,6 +9,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import ProductShowcase from "@/components/ProductShowcase";
 import { useCart } from "@/context/CartContext";
 import { products } from "@/lib/data";
+import SectionReveal from "@/components/SectionReveal";
 
 // ─── Payment method icons (text-based badges) ──────────────────────────────
 const paymentMethods = [
@@ -87,7 +88,7 @@ export default function ProductPage({
           <li>
             <Link
               href="/collections"
-              className="text-gray-500 hover:text-[#c8a97e] transition-colors"
+              className="text-gray-400 hover:text-[#c8a97e] transition-colors"
             >
               Collections
             </Link>
@@ -100,21 +101,27 @@ export default function ProductPage({
       </nav>
 
       {/* ── Features Bar ────────────────────────────────────────────── */}
-      <FeaturesSection />
+      <SectionReveal>
+        <FeaturesSection />
+      </SectionReveal>
 
       {/* ── Product Detail ──────────────────────────────────────────── */}
-      <ProductDetail product={product} slug={slug} />
+      <SectionReveal>
+        <ProductDetail product={product} slug={slug} />
+      </SectionReveal>
 
       {/* ══ YOU MAY ALSO LIKE ══════════════════════════════════════ */}
-      <div className="border-t border-gray-100 mt-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-12 pb-4">
-          <h2 className="text-center text-xs font-semibold tracking-[0.2em] uppercase text-gray-700 mb-1">
-            You May Also Like
-          </h2>
-          <div className="w-10 h-px bg-[#c8a97e] mx-auto mb-8" />
+      <SectionReveal>
+        <div className="border-t border-gray-100 mt-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-12 pb-4">
+            <h2 className="text-center text-xs font-semibold tracking-[0.2em] uppercase text-gray-700 mb-1">
+              You May Also Like
+            </h2>
+            <div className="w-10 h-px bg-[#c8a97e] mx-auto mb-8" />
+          </div>
+          <ProductShowcase />
         </div>
-        <ProductShowcase />
-      </div>
+      </SectionReveal>
     </main>
   );
 }
@@ -140,9 +147,9 @@ function ProductDetail({ product, slug }: { product: any; slug: string }) {
   return (
     <section className="bg-white py-10 px-4 sm:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Thumbnails */}
-          <div className="flex flex-row lg:flex-col gap-2 lg:w-[90px] shrink-0 overflow-x-auto lg:overflow-y-auto lg:max-h-[600px]">
+          <div className="flex flex-row lg:flex-col gap-3 lg:w-[90px] shrink-0 overflow-x-auto lg:overflow-y-auto lg:max-h-[600px] pb-2 lg:pb-0 scrollbar-hide">
             {product.images.map((img: string, i: number) => (
               <button
                 key={i}
@@ -177,12 +184,29 @@ function ProductDetail({ product, slug }: { product: any; slug: string }) {
 
           {/* Info Panel */}
           <div className="lg:w-[360px] shrink-0 flex flex-col gap-4">
-            <h1 className="text-2xl font-semibold text-gray-900 leading-snug">
-              {product.name}
-            </h1>
-            <p className="text-xl font-medium text-[#c8a97e]">
-              {product.price}
-            </p>
+            <div className="flex items-center gap-3">
+              <h1 className="text-2xl font-semibold text-gray-900 leading-snug">
+                {product.name}
+              </h1>
+              {product.isOnSale && (
+                <span className="bg-red-600 text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 shadow-sm">
+                  Sale
+                </span>
+              )}
+            </div>
+
+            <div className="flex items-center gap-4">
+              <p
+                className={`text-2xl font-bold ${product.isOnSale ? "text-red-600" : "text-[#c8a97e]"}`}
+              >
+                {product.price}
+              </p>
+              {product.isOnSale && product.originalPrice && (
+                <p className="text-lg text-gray-400 line-through">
+                  {product.originalPrice}
+                </p>
+              )}
+            </div>
 
             <ul className="space-y-1">
               {product.bullets.map((b: string, i: number) => (
@@ -222,7 +246,7 @@ function ProductDetail({ product, slug }: { product: any; slug: string }) {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 mt-2">
+            <div className="flex flex-wrap items-center gap-3 mt-4">
               <div className="flex items-center border border-gray-300 rounded-full overflow-hidden">
                 <button
                   onClick={() => setQty(Math.max(1, qty - 1))}
@@ -244,7 +268,7 @@ function ProductDetail({ product, slug }: { product: any; slug: string }) {
                 onClick={handleAddToCart}
                 className="flex-1 py-3 bg-[#c8a97e] text-white text-sm font-semibold tracking-widest uppercase rounded-full hover:bg-[#b8966b] transition-colors"
               >
-                Pre-Order
+                Add to Cart
               </button>
             </div>
 
@@ -262,7 +286,7 @@ function ProductDetail({ product, slug }: { product: any; slug: string }) {
         </div>
 
         {/* Description Section */}
-        <div className="mt-16 bg-[#f9f9f9] py-12 px-8 -mx-16">
+        <div className="mt-16 bg-[#f9f9f9] py-12 px-4 sm:px-8 lg:px-16 lg:-mx-16">
           <div className="flex justify-center mb-10">
             <span className="px-8 py-2 border border-gray-400 rounded-full text-sm text-gray-700 font-medium">
               Description

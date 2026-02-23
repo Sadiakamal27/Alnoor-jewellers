@@ -121,7 +121,7 @@ export default function ProductShowcase() {
           className="w-full"
         >
           <CarouselContent className="-ml-6">
-            {products.map((product) => (
+            {products.slice(0, 10).map((product) => (
               <CarouselItem
                 key={product.id}
                 className="pl-6 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
