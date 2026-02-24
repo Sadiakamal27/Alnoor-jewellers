@@ -9,6 +9,7 @@ import {
   MapPin,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import SectionReveal from "./SectionReveal";
 
 export default function Footer() {
@@ -31,9 +32,13 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             {/* About Section */}
             <div className="space-y-6">
-              <h3 className="text-xl font-bold tracking-wider text-[#c8a97e] uppercase">
-                Alnoor Jewellers
-              </h3>
+              <Image
+                src="/alnoor logo.svg"
+                alt="Alnoor Jewellers"
+                width={180}
+                height={50}
+                className="h-10 w-auto brightness-0 invert"
+              />
               <p className="text-gray-400 text-sm leading-relaxed">
                 Alnoor Jewellers redefines luxury with contemporary elegance.
                 Each piece is a fusion of modern design and masterful

@@ -71,7 +71,7 @@ export default function HeroBanner() {
                     <p className="text-[#c8a97e] text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase animate-in fade-in slide-in-from-bottom duration-700">
                       {item.subtitle}
                     </p>
-                    <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight animate-in fade-in slide-in-from-bottom duration-1000">
+                    <h2 className="text-5xl sm:text-7xl lg:text-8xl font-fancy text-white leading-tight animate-in fade-in slide-in-from-bottom duration-1000">
                       {item.title}
                     </h2>
                     <p className="text-gray-200 text-sm sm:text-lg font-light max-w-lg animate-in fade-in slide-in-from-bottom duration-1200">

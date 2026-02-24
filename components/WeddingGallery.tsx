@@ -75,7 +75,7 @@ export default function WeddingGallery() {
           <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#c8a97e] mb-2">
             The Journey of Elegance
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
             Heritage Wedding Diaries
           </h2>
           <div className="w-16 h-px bg-[#c8a97e] mx-auto" />

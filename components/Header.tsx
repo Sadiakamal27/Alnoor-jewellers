@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { ShoppingCart, User, Menu, X, Search, ChevronDown } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { categories } from "@/lib/data";
@@ -71,12 +72,14 @@ export default function Header() {
             className="flex-shrink-0"
             onClick={() => setIsMenuOpen(false)}
           >
-            <div
-              className="text-2xl font-bold tracking-wide"
-              style={{ color: "#c8a97e" }}
-            >
-              Alnoor Jewellers
-            </div>
+            <Image
+              src="/alnoor logo.svg"
+              alt="Alnoor Jewellers"
+              width={200}
+              height={60}
+              className="h-10 w-auto sm:h-12 lg:h-14"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

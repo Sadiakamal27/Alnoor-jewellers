@@ -185,7 +185,7 @@ function ProductDetail({ product, slug }: { product: any; slug: string }) {
           {/* Info Panel */}
           <div className="lg:w-[360px] shrink-0 flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <h1 className="text-2xl font-semibold text-gray-900 leading-snug">
+              <h1 className="text-4xl md:text-5xl font-fancy text-gray-900 leading-snug">
                 {product.name}
               </h1>
               {product.isOnSale && (

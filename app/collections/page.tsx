@@ -64,7 +64,7 @@ function CollectionsContent() {
           <p className="text-xs font-semibold tracking-[0.3em] uppercase text-[#c8a97e] mb-3">
             {heroSubtitle}
           </p>
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 uppercase tracking-widest">
+          <h1 className="text-4xl md:text-6xl font-fancy text-white mb-4 tracking-widest">
             {heroTitle}
           </h1>
           <div className="w-16 h-px bg-[#c8a97e] mx-auto" />

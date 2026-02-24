@@ -21,7 +21,7 @@ export default function AboutPage() {
           <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#c8a97e] mb-4">
             Legacy Of Excellence
           </p>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-7xl font-fancy text-white mb-6">
             Crafting Elegance Since 1995
           </h1>
           <div className="w-20 h-px bg-[#c8a97e] mx-auto mb-6" />

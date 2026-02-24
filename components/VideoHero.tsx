@@ -70,7 +70,7 @@ export default function VideoHero() {
             <p className="text-xs sm:text-sm font-semibold text-[#c8a97e] uppercase tracking-[0.4em] animate-in fade-in slide-in-from-bottom duration-700">
               The Art of Heritage
             </p>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-wider animate-in fade-in slide-in-from-bottom duration-1000">
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-fancy text-white leading-tight tracking-wider animate-in fade-in slide-in-from-bottom duration-1000">
               Where every gem has a story, <br className="hidden sm:block" />{" "}
               and every visit is a journey!
             </h2>
