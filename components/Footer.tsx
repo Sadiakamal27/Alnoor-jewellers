@@ -26,10 +26,10 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-white pt-16 pb-8">
+    <footer className="bg-gradient-to-b from-gray-900 to-black text-white pt-12 pb-6 sm:pt-16 sm:pb-8">
       <SectionReveal>
         <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-12 sm:mb-16">
             {/* About Section */}
             <div className="space-y-6">
               <Image

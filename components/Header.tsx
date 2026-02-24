@@ -55,31 +55,34 @@ export default function Header() {
       ref={headerRef}
       className="sticky top-0 z-50 bg-white border-b border-gray-200"
     >
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-3 sm:px-6 lg:px-8">
         {/* Top promotional bar */}
         <div
-          className="text-white text-center py-2 text-xs tracking-widest uppercase"
+          className="text-white text-center py-1.5 sm:py-2 text-[10px] sm:text-xs tracking-widest uppercase px-1"
           style={{ backgroundColor: "#c8a97e" }}
         >
-          Free Shipping on Orders Above $1000 &nbsp;|&nbsp; 100% Payment Secure
+          Free Shipping on Orders Above $1000{" "}
+          <span className="hidden xs:inline">&nbsp;|&nbsp;</span>
+          <br className="block xs:hidden" />
+          100% Payment Secure
         </div>
 
         {/* Main header */}
-        <div className="flex items-center justify-between py-4 lg:py-5">
+        <div className="flex items-center justify-between py-3 sm:py-4 lg:py-5 gap-2">
           {/* Logo */}
           <Link
             href="/"
             className="flex-shrink-0"
             onClick={() => setIsMenuOpen(false)}
           >
-            <Image
-              src="/alnoor logo.svg"
-              alt="Alnoor Jewellers"
-              width={200}
-              height={60}
-              className="h-10 w-auto sm:h-12 lg:h-14"
-              priority
-            />
+              <Image
+                src="/alnoor logo.svg"
+                alt="Alnoor Jewellers"
+                width={200}
+                height={60}
+                className="h-8 w-auto sm:h-10 lg:h-14"
+                priority
+              />
           </Link>
 
           {/* Desktop Navigation */}
@@ -152,7 +155,7 @@ export default function Header() {
           </nav>
 
           {/* Right icons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* Search Bar */}
             <div
               className={`flex items-center transition-all duration-300 ${isSearchOpen ? "w-48 sm:w-64 opacity-100" : "w-0 opacity-0 overflow-hidden"}`}

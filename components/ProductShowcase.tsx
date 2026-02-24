@@ -34,7 +34,7 @@ function ProductCard({ product }: ProductCardProps) {
   return (
     <Card className="group bg-[#f5f5f5] border-0 shadow-none transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
       {/* Inner Image Carousel */}
-      <div className="relative h-[420px] flex items-center justify-center">
+      <div className="relative h-[380px] sm:h-[420px] flex items-center justify-center">
         <Carousel setApi={setApi} opts={{ loop: true }} className="w-full">
           <CarouselContent>
             {product.images.map((img, index) => (
@@ -81,11 +81,11 @@ function ProductCard({ product }: ProductCardProps) {
           {product.price}
         </p>
 
-        {/* Hover Button */}
-        <div className="max-h-0 overflow-hidden group-hover:max-h-20 transition-all duration-500">
+        {/* Hover Button (always visible on mobile, hover-reveal on desktop) */}
+        <div className="mt-4">
           <Link href={`/product/${product.slug}`}>
             <Button
-              className="mt-6 w-full text-white text-sm tracking-widest uppercase"
+              className="w-full text-white text-sm tracking-widest uppercase opacity-100 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 md:mt-6 transition-all duration-300"
               style={{ backgroundColor: "#c8a97e" }}
             >
               Discover More
