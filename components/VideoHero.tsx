@@ -42,7 +42,7 @@ export default function VideoHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-[70vh] min-h-[500px] overflow-hidden bg-black"
+      className="relative w-full h-[80vh] sm:h-[70vh] min-h-[500px] overflow-hidden bg-black"
     >
       {/* Background Video */}
       <video
@@ -67,16 +67,16 @@ export default function VideoHero() {
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-3xl space-y-8">
           <div className="space-y-4">
-            <p className="text-xs sm:text-sm font-semibold text-[#c8a97e] uppercase tracking-[0.4em] animate-in fade-in slide-in-from-bottom duration-700">
+            <p className="text-[10px] sm:text-sm font-semibold text-[#c8a97e] uppercase tracking-[0.4em] animate-in fade-in slide-in-from-bottom duration-700">
               The Art of Heritage
             </p>
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-fancy text-white leading-tight tracking-wider animate-in fade-in slide-in-from-bottom duration-1000">
+            <h2 className="text-3xl sm:text-6xl lg:text-7xl font-fancy text-white leading-tight tracking-wider animate-in fade-in slide-in-from-bottom duration-1000">
               Where every gem has a story, <br className="hidden sm:block" />{" "}
               and every visit is a journey!
             </h2>
           </div>
 
-          <p className="text-sm sm:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed font-light animate-in fade-in slide-in-from-bottom duration-1200">
+          <p className="text-xs sm:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed font-light animate-in fade-in slide-in-from-bottom duration-1200">
             Discover the perfect piece of jewelry that tells your unique story.
             Our collection features exquisite designs crafted with passion and
             precision.
