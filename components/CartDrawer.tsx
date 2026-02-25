@@ -3,7 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
-import { X, ShoppingBag, Trash2, Plus, Minus } from "lucide-react";
+import { ShoppingBag, Trash2, Plus, Minus } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
 
 export default function CartDrawer() {
   const {
@@ -21,46 +28,25 @@ export default function CartDrawer() {
     "Rs." + n.toLocaleString("en-PK", { maximumFractionDigits: 0 });
 
   return (
-    <>
-      {/* ── Backdrop ──────────────────────────────────────────────── */}
-      <div
-        onClick={closeCart}
-        className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
-          isOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
-      />
-
-      {/* ── Drawer panel ──────────────────────────────────────────── */}
-      <aside
-        className={`fixed top-0 right-0 h-full z-50 w-full sm:w-[420px] bg-white shadow-2xl flex flex-col
-          transition-transform duration-300 ease-in-out
-          ${isOpen ? "translate-x-0" : "translate-x-full"}`}
-      >
+    <Sheet open={isOpen} onOpenChange={(open) => !open && closeCart()}>
+      <SheetContent className="w-full sm:max-w-[420px] p-0 flex flex-col gap-0 border-l border-gray-100">
         {/* Header */}
-          <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+        <SheetHeader className="px-6 py-5 border-b border-gray-100 flex-row items-center justify-between space-y-0">
           <div className="flex items-center gap-3">
             <ShoppingBag className="w-5 h-5" style={{ color: "#C6A15B" }} />
-            <h2 className="text-sm font-semibold tracking-[0.15em] uppercase text-gray-800">
+            <SheetTitle className="text-sm font-semibold tracking-[0.15em] uppercase text-gray-800">
               Your Cart
-            </h2>
+            </SheetTitle>
             {totalItems > 0 && (
               <span
-                className="text-white text-xs font-semibold rounded-full w-5 h-5 flex items-center justify-center"
+                className="text-white text-[10px] font-semibold rounded-full w-5 h-5 flex items-center justify-center shrink-0"
                 style={{ backgroundColor: "#C6A15B" }}
               >
                 {totalItems}
               </span>
             )}
           </div>
-          <button
-            onClick={closeCart}
-            className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 hover:border-[#C6A15B] hover:text-[#C6A15B] transition-colors"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        </div>
+        </SheetHeader>
 
         {/* ── Cart Items ────────────────────────────────────────────── */}
         <div className="flex-1 overflow-y-auto px-6 py-4 space-y-5">
@@ -70,13 +56,13 @@ export default function CartDrawer() {
               <p className="text-sm text-gray-400 tracking-wide">
                 Your cart is empty
               </p>
-              <button
+              <Button
                 onClick={closeCart}
-                className="mt-2 px-6 py-2 text-xs font-semibold tracking-widest uppercase text-white rounded-full transition-opacity hover:opacity-80"
+                className="mt-2 px-8 py-6 text-xs font-semibold tracking-widest uppercase text-white rounded-full transition-all hover:scale-105"
                 style={{ backgroundColor: "#C6A15B" }}
               >
                 Continue Shopping
-              </button>
+              </Button>
             </div>
           ) : (
             items.map((item) => (
@@ -111,21 +97,25 @@ export default function CartDrawer() {
                   <div className="flex items-center gap-3 mt-2">
                     {/* Stepper */}
                     <div className="flex items-center border border-gray-200 rounded-full overflow-hidden">
-                      <button
+                      <Button
+                        variant="ghost"
+                        size="icon"
                         onClick={() => updateQty(item.id, item.qty - 1)}
-                        className="w-7 h-7 flex items-center justify-center text-gray-500 hover:text-[#C6A15B] transition-colors"
+                        className="w-7 h-7 text-gray-500 hover:text-[#C6A15B] transition-colors rounded-none"
                       >
                         <Minus className="w-3 h-3" />
-                      </button>
+                      </Button>
                       <span className="w-7 text-center text-xs font-medium text-gray-700">
                         {item.qty}
                       </span>
-                      <button
+                      <Button
+                        variant="ghost"
+                        size="icon"
                         onClick={() => updateQty(item.id, item.qty + 1)}
-                        className="w-7 h-7 flex items-center justify-center text-gray-500 hover:text-[#C6A15B] transition-colors"
+                        className="w-7 h-7 text-gray-500 hover:text-[#C6A15B] transition-colors rounded-none"
                       >
                         <Plus className="w-3 h-3" />
-                      </button>
+                      </Button>
                     </div>
 
                     {/* Sub-total */}
@@ -134,12 +124,14 @@ export default function CartDrawer() {
                     </span>
 
                     {/* Remove */}
-                    <button
+                    <Button
+                      variant="ghost"
+                      size="icon"
                       onClick={() => removeItem(item.id)}
-                      className="ml-auto text-gray-300 hover:text-red-400 transition-colors"
+                      className="ml-auto text-gray-300 hover:text-red-400 transition-colors w-8 h-8"
                     >
                       <Trash2 className="w-4 h-4" />
-                    </button>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -149,23 +141,25 @@ export default function CartDrawer() {
 
         {/* ── Footer ────────────────────────────────────────────────── */}
         {items.length > 0 && (
-          <div className="px-6 py-5 border-t border-gray-100 space-y-3 bg-white">
+          <div className="px-6 py-6 border-t border-gray-100 space-y-4 bg-white">
             {/* Order summary */}
-            <div className="flex justify-between items-center text-sm">
-              <span className="text-gray-500 text-xs tracking-wide uppercase">
-                Subtotal
-              </span>
-              <span className="font-semibold text-gray-800">
-                {fmt(totalPrice)}
-              </span>
-            </div>
-            <div className="flex justify-between items-center text-sm">
-              <span className="text-gray-500 text-xs tracking-wide uppercase">
-                Shipping
-              </span>
-              <span className="text-xs text-[#C6A15B] font-medium">
-                Calculated at checkout
-              </span>
+            <div className="space-y-2">
+              <div className="flex justify-between items-center">
+                <span className="text-gray-500 text-[10px] tracking-widest uppercase">
+                  Subtotal
+                </span>
+                <span className="font-semibold text-gray-800 text-sm">
+                  {fmt(totalPrice)}
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-500 text-[10px] tracking-widest uppercase">
+                  Shipping
+                </span>
+                <span className="text-[10px] text-[#C6A15B] font-bold tracking-widest uppercase">
+                  Calculated at checkout
+                </span>
+              </div>
             </div>
 
             <div className="h-px bg-gray-100" />
@@ -180,23 +174,26 @@ export default function CartDrawer() {
             </div>
 
             {/* CTA Buttons */}
-            <Link href="/checkout" onClick={closeCart}>
-              <button
-                className="w-full py-3 text-white text-xs font-semibold tracking-[0.15em] uppercase rounded-full transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "#C6A15B" }}
+            <div className="flex flex-col gap-3 pt-2">
+              <Link href="/checkout" onClick={closeCart} className="w-full">
+                <Button
+                  className="w-full py-6 text-white text-[11px] font-bold tracking-[0.2em] uppercase rounded-full transition-all hover:brightness-110"
+                  style={{ backgroundColor: "#C6A15B" }}
+                >
+                  Proceed to Checkout
+                </Button>
+              </Link>
+              <Button
+                variant="outline"
+                onClick={closeCart}
+                className="w-full py-6 text-[11px] font-bold tracking-[0.2em] uppercase rounded-full border-gray-200 text-gray-600 hover:border-[#C6A15B] hover:text-[#C6A15B] transition-colors"
               >
-                Proceed to Checkout
-              </button>
-            </Link>
-            <button
-              onClick={closeCart}
-              className="w-full py-3 text-xs font-semibold tracking-[0.15em] uppercase rounded-full border border-gray-300 text-gray-600 hover:border-[#C6A15B] hover:text-[#C6A15B] transition-colors"
-            >
-              Continue Shopping
-            </button>
+                Continue Shopping
+              </Button>
+            </div>
           </div>
         )}
-      </aside>
-    </>
+      </SheetContent>
+    </Sheet>
   );
 }
