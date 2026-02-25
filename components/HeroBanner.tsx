@@ -113,9 +113,9 @@ export default function HeroBanner() {
         @media (min-width: 640px) {
           .hero-outer { padding-bottom: 56.25%; }
         }
-        /* Desktop 1024px+: ~2:1, capped at 680px */
+        /* Desktop 1024px+: More compact, capped at 540px */
         @media (min-width: 1024px) {
-          .hero-outer { padding-bottom: 48%; max-height: 680px; }
+          .hero-outer { padding-bottom: 38%; max-height: 540px; }
         }
         /* Grab cursor while dragging */
         .hero-drag { cursor: grab; }
