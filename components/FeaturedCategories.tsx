@@ -42,13 +42,13 @@ export default function FeaturedCategories() {
     <section className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-12">
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#c8a97e] mb-2">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#C6A15B] mb-2">
             Browse By Category
           </p>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Featured Categories
           </h2>
-          <div className="w-10 h-px bg-[#c8a97e] mx-auto" />
+          <div className="w-10 h-px bg-[#C6A15B] mx-auto" />
         </div>
 
         {/* Top row: 3 categories */}

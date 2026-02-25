@@ -77,7 +77,7 @@ function ProductCard({ product }: ProductCardProps) {
 
         <p className="text-sm text-gray-500 mb-3">{product.sku}</p>
 
-        <p className="text-lg font-semibold" style={{ color: "#c8a97e" }}>
+        <p className="text-lg font-semibold" style={{ color: "#C6A15B" }}>
           {product.price}
         </p>
 
@@ -86,7 +86,7 @@ function ProductCard({ product }: ProductCardProps) {
           <Link href={`/product/${product.slug}`}>
             <Button
               className="w-full text-white text-sm tracking-widest uppercase opacity-100 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 md:mt-6 transition-all duration-300"
-              style={{ backgroundColor: "#c8a97e" }}
+              style={{ backgroundColor: "#C6A15B" }}
             >
               Discover More
             </Button>
@@ -103,13 +103,13 @@ export default function ProductShowcase() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section heading */}
         <div className="text-center mb-10">
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#c8a97e] mb-2">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#C6A15B] mb-2">
             New Arrivals
           </p>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Our Collections
           </h2>
-          <div className="w-10 h-px bg-[#c8a97e] mx-auto" />
+          <div className="w-10 h-px bg-[#C6A15B] mx-auto" />
         </div>
 
         {/* Outer Carousel (Cards Slider) */}

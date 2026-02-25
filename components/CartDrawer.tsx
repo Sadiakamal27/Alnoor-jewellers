@@ -39,16 +39,16 @@ export default function CartDrawer() {
           ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+          <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
           <div className="flex items-center gap-3">
-            <ShoppingBag className="w-5 h-5" style={{ color: "#c8a97e" }} />
+            <ShoppingBag className="w-5 h-5" style={{ color: "#C6A15B" }} />
             <h2 className="text-sm font-semibold tracking-[0.15em] uppercase text-gray-800">
               Your Cart
             </h2>
             {totalItems > 0 && (
               <span
                 className="text-white text-xs font-semibold rounded-full w-5 h-5 flex items-center justify-center"
-                style={{ backgroundColor: "#c8a97e" }}
+                style={{ backgroundColor: "#C6A15B" }}
               >
                 {totalItems}
               </span>
@@ -56,7 +56,7 @@ export default function CartDrawer() {
           </div>
           <button
             onClick={closeCart}
-            className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 hover:border-[#c8a97e] hover:text-[#c8a97e] transition-colors"
+            className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 hover:border-[#C6A15B] hover:text-[#C6A15B] transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -73,7 +73,7 @@ export default function CartDrawer() {
               <button
                 onClick={closeCart}
                 className="mt-2 px-6 py-2 text-xs font-semibold tracking-widest uppercase text-white rounded-full transition-opacity hover:opacity-80"
-                style={{ backgroundColor: "#c8a97e" }}
+                style={{ backgroundColor: "#C6A15B" }}
               >
                 Continue Shopping
               </button>
@@ -102,7 +102,7 @@ export default function CartDrawer() {
                   <p className="text-xs text-gray-400 mt-0.5">{item.option}</p>
                   <p
                     className="text-sm font-semibold mt-1"
-                    style={{ color: "#c8a97e" }}
+                    style={{ color: "#C6A15B" }}
                   >
                     {fmt(item.priceNum)}
                   </p>
@@ -113,7 +113,7 @@ export default function CartDrawer() {
                     <div className="flex items-center border border-gray-200 rounded-full overflow-hidden">
                       <button
                         onClick={() => updateQty(item.id, item.qty - 1)}
-                        className="w-7 h-7 flex items-center justify-center text-gray-500 hover:text-[#c8a97e] transition-colors"
+                        className="w-7 h-7 flex items-center justify-center text-gray-500 hover:text-[#C6A15B] transition-colors"
                       >
                         <Minus className="w-3 h-3" />
                       </button>
@@ -122,7 +122,7 @@ export default function CartDrawer() {
                       </span>
                       <button
                         onClick={() => updateQty(item.id, item.qty + 1)}
-                        className="w-7 h-7 flex items-center justify-center text-gray-500 hover:text-[#c8a97e] transition-colors"
+                        className="w-7 h-7 flex items-center justify-center text-gray-500 hover:text-[#C6A15B] transition-colors"
                       >
                         <Plus className="w-3 h-3" />
                       </button>
@@ -163,7 +163,7 @@ export default function CartDrawer() {
               <span className="text-gray-500 text-xs tracking-wide uppercase">
                 Shipping
               </span>
-              <span className="text-xs text-[#c8a97e] font-medium">
+              <span className="text-xs text-[#C6A15B] font-medium">
                 Calculated at checkout
               </span>
             </div>
@@ -174,7 +174,7 @@ export default function CartDrawer() {
               <span className="text-xs font-bold tracking-widest uppercase text-gray-700">
                 Total
               </span>
-              <span className="text-lg font-bold" style={{ color: "#c8a97e" }}>
+              <span className="text-lg font-bold" style={{ color: "#C6A15B" }}>
                 {fmt(totalPrice)}
               </span>
             </div>
@@ -183,14 +183,14 @@ export default function CartDrawer() {
             <Link href="/checkout" onClick={closeCart}>
               <button
                 className="w-full py-3 text-white text-xs font-semibold tracking-[0.15em] uppercase rounded-full transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "#c8a97e" }}
+                style={{ backgroundColor: "#C6A15B" }}
               >
                 Proceed to Checkout
               </button>
             </Link>
             <button
               onClick={closeCart}
-              className="w-full py-3 text-xs font-semibold tracking-[0.15em] uppercase rounded-full border border-gray-300 text-gray-600 hover:border-[#c8a97e] hover:text-[#c8a97e] transition-colors"
+              className="w-full py-3 text-xs font-semibold tracking-[0.15em] uppercase rounded-full border border-gray-300 text-gray-600 hover:border-[#C6A15B] hover:text-[#C6A15B] transition-colors"
             >
               Continue Shopping
             </button>

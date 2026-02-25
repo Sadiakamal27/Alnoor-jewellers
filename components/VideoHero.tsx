@@ -67,7 +67,7 @@ export default function VideoHero() {
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-3xl space-y-8">
           <div className="space-y-4">
-            <p className="text-[10px] sm:text-sm font-semibold text-[#c8a97e] uppercase tracking-[0.4em] animate-in fade-in slide-in-from-bottom duration-700">
+            <p className="text-[10px] sm:text-sm font-semibold text-[#C6A15B] uppercase tracking-[0.4em] animate-in fade-in slide-in-from-bottom duration-700">
               The Art of Heritage
             </p>
             <h2 className="text-3xl sm:text-6xl lg:text-7xl font-fancy text-white leading-tight tracking-wider animate-in fade-in slide-in-from-bottom duration-1000">
@@ -87,7 +87,7 @@ export default function VideoHero() {
               <Button
                 size="lg"
                 className="text-white font-bold px-10 py-7 text-xs sm:text-sm tracking-[0.2em] uppercase rounded-none transition-all duration-300 shadow-2xl hover:scale-105"
-                style={{ backgroundColor: "#c8a97e" }}
+                style={{ backgroundColor: "#C6A15B" }}
               >
                 Shop the Collection
               </Button>

@@ -24,13 +24,13 @@ export default function SalePage() {
           />
         </div>
         <div className="relative z-10">
-          <p className="text-xs font-semibold tracking-[0.3em] uppercase text-[#c8a97e] mb-3">
+          <p className="text-xs font-semibold tracking-[0.3em] uppercase text-[var(--brand-gold)] mb-3">
             Limited Time Offers
           </p>
           <h1 className="text-4xl md:text-6xl font-fancy text-white mb-4 tracking-widest">
             Exclusive Sale
           </h1>
-          <div className="w-16 h-px bg-[#c8a97e] mx-auto" />
+          <div className="w-16 h-px bg-[var(--brand-gold)] mx-auto" />
         </div>
       </section>
 
@@ -40,13 +40,13 @@ export default function SalePage() {
           <li>
             <Link
               href="/"
-              className="text-gray-400 hover:text-[#c8a97e] transition-colors"
+              className="text-gray-400 hover:text-[var(--brand-gold)] transition-colors"
             >
               Home
             </Link>
           </li>
           <li className="text-gray-200">›</li>
-          <li className="text-gray-800 font-bold underline decoration-[#c8a97e] underline-offset-4">
+          <li className="text-gray-800 font-bold underline decoration-[var(--brand-gold)] underline-offset-4">
             Sale
           </li>
         </ol>
@@ -91,17 +91,17 @@ function ProductCard({ product }: { product: Product }) {
 
         {/* Quick Add Overlay */}
         <div className="absolute bottom-4 left-4 right-4 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-          <div className="w-full bg-white/95 backdrop-blur-sm text-gray-900 py-3 text-[10px] font-bold tracking-[0.2em] uppercase shadow-lg hover:bg-[#c8a97e] hover:text-white transition-colors border-none text-center flex items-center justify-center cursor-pointer">
+          <div className="w-full bg-white/95 backdrop-blur-sm text-gray-900 py-3 text-[10px] font-bold tracking-[0.2em] uppercase shadow-lg hover:bg-[var(--brand-gold)] hover:text-white transition-colors border-none text-center flex items-center justify-center cursor-pointer">
             View Details
           </div>
         </div>
       </div>
 
       <div className="text-center px-2">
-        <p className="text-[9px] tracking-[0.25em] uppercase text-[#c8a97e] mb-1.5 font-bold">
+        <p className="text-[9px] tracking-[0.25em] uppercase text-[var(--brand-gold)] mb-1.5 font-bold">
           {product.category}
         </p>
-        <h3 className="text-xs font-medium text-gray-800 group-hover:text-[#c8a97e] transition-colors mb-2 leading-relaxed tracking-wide px-4">
+        <h3 className="text-xs font-medium text-gray-800 group-hover:text-[var(--brand-gold)] transition-colors mb-2 leading-relaxed tracking-wide px-4">
           {product.name}
         </h3>
         <div className="flex items-center justify-center gap-2">

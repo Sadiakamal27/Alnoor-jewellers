@@ -52,13 +52,13 @@ export default function ContactPage() {
     <main className="min-h-screen bg-white">
       {/* Page Header */}
       <section className="bg-gray-50 py-20 px-4 text-center">
-        <p className="text-xs font-semibold tracking-[0.3em] uppercase text-[#c8a97e] mb-3">
+        <p className="text-xs font-semibold tracking-[0.3em] uppercase text-[#C6A15B] mb-3">
           Get In Touch
         </p>
         <h1 className="text-4xl md:text-6xl font-fancy text-gray-900 mb-4 tracking-wider">
           Contact Us
         </h1>
-        <div className="w-16 h-px bg-[#c8a97e] mx-auto" />
+        <div className="w-16 h-px bg-[#C6A15B] mx-auto" />
       </section>
 
       <section className="py-24 px-4 sm:px-8 lg:px-16 container mx-auto max-w-7xl">
@@ -80,7 +80,7 @@ export default function ContactPage() {
               <div className="space-y-8">
                 <div className="flex gap-6 items-start">
                   <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-[#c8a97e]" />
+                    <MapPin className="w-5 h-5 text-[#C6A15B]" />
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 uppercase tracking-widest text-xs mb-2">
@@ -95,8 +95,8 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex gap-6 items-start">
-                  <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5 text-[#c8a97e]" />
+                  <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justifycenter shrink-0">
+                    <Phone className="w-5 h-5 text-[#C6A15B]" />
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 uppercase tracking-widest text-xs mb-2">
@@ -108,7 +108,7 @@ export default function ContactPage() {
 
                 <div className="flex gap-6 items-start">
                   <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5 text-[#c8a97e]" />
+                    <Mail className="w-5 h-5 text-[#C6A15B]" />
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 uppercase tracking-widest text-xs mb-2">
@@ -122,7 +122,7 @@ export default function ContactPage() {
 
                 <div className="flex gap-6 items-start">
                   <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center shrink-0">
-                    <Clock className="w-5 h-5 text-[#c8a97e]" />
+                    <Clock className="w-5 h-5 text-[#C6A15B]" />
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 uppercase tracking-widest text-xs mb-2">
@@ -154,7 +154,7 @@ export default function ContactPage() {
                     <Input
                       name="firstName"
                       required
-                      className="w-full bg-white border border-gray-200 px-4 py-3 text-sm focus:border-[#c8a97e] outline-none transition-colors rounded-none"
+                      className="w-full bg-white border border-gray-200 px-4 py-3 text-sm focus:border-[var(--brand-gold)] outline-none transition-colors rounded-none"
                       placeholder="John"
                     />
                   </div>
@@ -165,7 +165,7 @@ export default function ContactPage() {
                     <Input
                       name="lastName"
                       required
-                      className="w-full bg-white border border-gray-200 px-4 py-3 text-sm focus:border-[#c8a97e] outline-none transition-colors rounded-none"
+                      className="w-full bg-white border border-gray-200 px-4 py-3 text-sm focus:border-[var(--brand-gold)] outline-none transition-colors rounded-none"
                       placeholder="Doe"
                     />
                   </div>
@@ -179,7 +179,7 @@ export default function ContactPage() {
                     name="email"
                     type="email"
                     required
-                    className="w-full bg-white border border-gray-200 px-4 py-3 text-sm focus:border-[#c8a97e] outline-none transition-colors rounded-none"
+                    className="w-full bg-white border border-gray-200 px-4 py-3 text-sm focus:border-[var(--brand-gold)] outline-none transition-colors rounded-none"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -191,7 +191,7 @@ export default function ContactPage() {
                   <select
                     name="subject"
                     required
-                    className="w-full h-11 bg-white border border-gray-200 px-4 py-2 text-sm focus:border-[#c8a97e] outline-none transition-colors"
+                    className="w-full h-11 bg-white border border-gray-200 px-4 py-2 text-sm focus:border-[var(--brand-gold)] outline-none transition-colors"
                   >
                     <option>General Inquiry</option>
                     <option>Bespoke Design</option>
@@ -208,7 +208,7 @@ export default function ContactPage() {
                     name="message"
                     required
                     rows={5}
-                    className="w-full bg-white border border-gray-200 px-4 py-3 text-sm focus:border-[#c8a97e] outline-none transition-colors"
+                    className="w-full bg-white border border-gray-200 px-4 py-3 text-sm focus:border-[var(--brand-gold)] outline-none transition-colors"
                     placeholder="How can we help you?"
                   />
                 </div>
@@ -216,7 +216,7 @@ export default function ContactPage() {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-gray-900 text-white py-6 text-xs font-semibold tracking-widest uppercase hover:bg-[#c8a97e] transition-colors shadow-lg rounded-none"
+                  className="w-full bg-gray-900 text-white py-6 text-xs font-semibold tracking-widest uppercase hover:bg-[var(--brand-gold)] transition-colors shadow-lg rounded-none"
                 >
                   {loading ? (
                     <Loader2 className="w-4 h-4 animate-spin mr-2" />

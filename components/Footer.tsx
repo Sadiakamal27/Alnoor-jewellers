@@ -111,11 +111,11 @@ export default function Footer() {
 
             {/* Location Section */}
             <div className="space-y-6">
-              <h4 className="text-lg font-bold uppercase tracking-widest border-b border-[#c8a97e]/30 pb-2 inline-block">
+              <h4 className="text-lg font-bold uppercase tracking-widest border-b border-[#C6A15B]/30 pb-2 inline-block">
                 Location
               </h4>
               <div className="flex gap-3 text-gray-400 text-sm leading-relaxed">
-                <MapPin className="h-5 w-5 text-[#c8a97e] shrink-0" />
+                <MapPin className="h-5 w-5 text-[#C6A15B] shrink-0" />
                 <p>
                   7072, Airport Road, Mississauga
                   <br />
@@ -136,7 +136,7 @@ export default function Footer() {
                     <a
                       key={label}
                       href={href}
-                      className="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:bg-[#c8a97e] hover:border-[#c8a97e] hover:text-black transition-all duration-300"
+                      className="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:bg-[#C6A15B] hover:border-[#C6A15B] hover:text-black transition-all duration-300"
                       aria-label={label}
                     >
                       <Icon className="h-5 w-5" />

@@ -48,20 +48,20 @@ export default function ReviewsSection() {
     <section id="reviews-section" className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-12">
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#c8a97e] mb-2">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#C6A15B] mb-2">
             Testimonials
           </p>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             What Our Customers Say
           </h2>
-          <div className="w-10 h-px bg-[#c8a97e] mx-auto mb-4" />
+          <div className="w-10 h-px bg-[#C6A15B] mx-auto mb-4" />
           <div className="flex items-center justify-center gap-2">
             <div className="flex gap-1">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
                   className="h-4 w-4"
-                  style={{ fill: "#c8a97e", color: "#c8a97e" }}
+                  style={{ fill: "#C6A15B", color: "#C6A15B" }}
                 />
               ))}
             </div>
@@ -84,7 +84,7 @@ export default function ReviewsSection() {
                       <Star
                         key={i}
                         className="h-4 w-4"
-                        style={{ fill: "#c8a97e", color: "#c8a97e" }}
+                        style={{ fill: "#C6A15B", color: "#C6A15B" }}
                       />
                     ))}
                   </div>

@@ -59,7 +59,7 @@ export default function Header() {
         {/* Top promotional bar */}
         <div
           className="text-white text-center py-1.5 sm:py-2 text-[10px] sm:text-xs tracking-widest uppercase px-1"
-          style={{ backgroundColor: "#c8a97e" }}
+          style={{ backgroundColor: "#C6A15B" }}
         >
           Free Shipping on Orders Above $1000{" "}
           <span className="hidden xs:inline">&nbsp;|&nbsp;</span>
@@ -89,7 +89,7 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-8">
             <Link
               href="/"
-              className="text-sm font-medium text-gray-600 hover:text-[#c8a97e] transition-colors tracking-wide"
+              className="text-sm font-medium text-gray-600 hover:text-[#C6A15B] transition-colors tracking-wide"
             >
               Home
             </Link>
@@ -97,7 +97,7 @@ export default function Header() {
             {/* Jewelry Dropdown trigger */}
             <div className="relative group">
               <button
-                className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-[#c8a97e] transition-colors tracking-wide"
+                className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-[#C6A15B] transition-colors tracking-wide"
                 onMouseEnter={() => setIsJwrOpen(true)}
                 onClick={() => setIsJwrOpen(!isJwrOpen)}
               >
@@ -118,7 +118,7 @@ export default function Header() {
                     key={cat}
                     href={`/collections?category=${encodeURIComponent(cat)}`}
                     onClick={() => setIsJwrOpen(false)}
-                    className="block px-6 py-2.5 text-xs tracking-widest uppercase text-gray-600 hover:bg-gray-50 hover:text-[#c8a97e] transition-colors"
+                    className="block px-6 py-2.5 text-xs tracking-widest uppercase text-gray-600 hover:bg-gray-50 hover:text-[#C6A15B] transition-colors"
                   >
                     {cat}
                   </Link>
@@ -127,7 +127,7 @@ export default function Header() {
                   <Link
                     href="/collections"
                     onClick={() => setIsJwrOpen(false)}
-                    className="block px-6 py-2.5 text-xs tracking-widest uppercase text-[#c8a97e] font-bold"
+                    className="block px-6 py-2.5 text-xs tracking-widest uppercase text-[#C6A15B] font-bold"
                   >
                     View All Collections
                   </Link>
@@ -142,13 +142,13 @@ export default function Header() {
             </Link>
             <Link
               href="/about"
-              className="text-sm font-medium text-gray-600 hover:text-[#c8a97e] transition-colors tracking-wide"
+              className="text-sm font-medium text-gray-600 hover:text-[#C6A15B] transition-colors tracking-wide"
             >
               About
             </Link>
             <Link
               href="/contact"
-              className="text-sm font-medium text-gray-600 hover:text-[#c8a97e] transition-colors tracking-wide"
+              className="text-sm font-medium text-gray-600 hover:text-[#C6A15B] transition-colors tracking-wide"
             >
               Contact
             </Link>
@@ -167,7 +167,7 @@ export default function Header() {
                   placeholder="Search gems..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-gray-50 border border-gray-100 rounded-full py-1.5 px-4 text-xs focus:outline-none focus:border-[#c8a97e] transition-all"
+                  className="w-full bg-gray-50 border border-gray-100 rounded-full py-1.5 px-4 text-xs focus:outline-none focus:border-[#C6A15B] transition-all"
                 />
               </form>
             </div>
@@ -175,7 +175,7 @@ export default function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="hover:text-[#c8a97e]"
+              className="hover:text-[#C6A15B]"
               onClick={() => {
                 setIsSearchOpen(!isSearchOpen);
                 if (!isSearchOpen) {
@@ -192,21 +192,21 @@ export default function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="hover:text-[#c8a97e]"
+              className="hover:text-[#C6A15B]"
             >
               <User className="h-5 w-5" />
             </Button>
             <Button
               variant="ghost"
               size="icon"
-              className="relative hover:text-[#c8a97e]"
+              className="relative hover:text-[#C6A15B]"
               onClick={openCart}
             >
               <ShoppingCart className="h-5 w-5" />
               {totalItems > 0 && (
                 <span
                   className="absolute top-1 right-1 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center text-[10px]"
-                  style={{ backgroundColor: "#c8a97e" }}
+                  style={{ backgroundColor: "#C6A15B" }}
                 >
                   {totalItems}
                 </span>
@@ -235,7 +235,7 @@ export default function Header() {
             <Link
               href="/"
               onClick={() => setIsMenuOpen(false)}
-              className="block px-4 py-2 text-sm font-medium text-gray-600 hover:text-[#c8a97e] transition"
+              className="block px-4 py-2 text-sm font-medium text-gray-600 hover:text-[#C6A15B] transition"
             >
               Home
             </Link>
@@ -249,7 +249,7 @@ export default function Header() {
                     key={cat}
                     href={`/collections?category=${encodeURIComponent(cat)}`}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-xs text-gray-600 py-1 hover:text-[#c8a97e]"
+                    className="text-xs text-gray-600 py-1 hover:text-[#C6A15B]"
                   >
                     {cat}
                   </Link>
@@ -266,14 +266,14 @@ export default function Header() {
             <Link
               href="/about"
               onClick={() => setIsMenuOpen(false)}
-              className="block px-4 py-2 text-sm font-medium text-gray-600 hover:text-[#c8a97e] transition"
+              className="block px-4 py-2 text-sm font-medium text-gray-600 hover:text-[#C6A15B] transition"
             >
               About
             </Link>
             <Link
               href="/contact"
               onClick={() => setIsMenuOpen(false)}
-              className="block px-4 py-2 text-sm font-medium text-gray-600 hover:text-[#c8a97e] transition"
+              className="block px-4 py-2 text-sm font-medium text-gray-600 hover:text-[#C6A15B] transition"
             >
               Contact
             </Link>

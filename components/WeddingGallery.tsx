@@ -72,13 +72,13 @@ export default function WeddingGallery() {
     <section className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-16">
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#c8a97e] mb-2">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[var(--brand-gold)] mb-2">
             The Journey of Elegance
           </p>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
             Heritage Wedding Diaries
           </h2>
-          <div className="w-16 h-px bg-[#c8a97e] mx-auto" />
+          <div className="w-16 h-px bg-[var(--brand-gold)] mx-auto" />
         </div>
 
         {/* Masonry-style Grid */}
@@ -148,7 +148,7 @@ function GalleryCard({
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
-        <span className="text-[9px] text-[#c8a97e] font-bold tracking-[0.3em] uppercase mb-2">
+        <span className="text-[9px] text-[var(--brand-gold)] font-bold tracking-[0.3em] uppercase mb-2">
           {image.category}
         </span>
         <h3 className="text-sm font-semibold text-white uppercase tracking-wider">

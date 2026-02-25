@@ -79,7 +79,7 @@ export default function ProductPage({
           <li>
             <Link
               href="/"
-              className="text-gray-500 hover:text-[#c8a97e] transition-colors"
+              className="text-gray-500 hover:text-[#C6A15B] transition-colors"
             >
               Home
             </Link>
@@ -88,7 +88,7 @@ export default function ProductPage({
           <li>
             <Link
               href="/collections"
-              className="text-gray-400 hover:text-[#c8a97e] transition-colors"
+              className="text-gray-400 hover:text-[#C6A15B] transition-colors"
             >
               Collections
             </Link>
@@ -117,7 +117,7 @@ export default function ProductPage({
             <h2 className="text-center text-xs font-semibold tracking-[0.2em] uppercase text-gray-700 mb-1">
               You May Also Like
             </h2>
-            <div className="w-10 h-px bg-[#c8a97e] mx-auto mb-8" />
+            <div className="w-10 h-px bg-[#C6A15B] mx-auto mb-8" />
           </div>
           <ProductShowcase />
         </div>
@@ -157,8 +157,8 @@ function ProductDetail({ product, slug }: { product: any; slug: string }) {
                 onClick={() => setActiveImg(i)}
                 className={`relative shrink-0 w-[70px] h-[70px] lg:w-[80px] lg:h-[80px] border-2 transition-all duration-200 ${
                   activeImg === i
-                    ? "border-[#c8a97e]"
-                    : "border-gray-200 hover:border-[#c8a97e]"
+                    ? "border-[#C6A15B]"
+                    : "border-gray-200 hover:border-[#C6A15B]"
                 }`}
               >
                 <Image
@@ -197,7 +197,7 @@ function ProductDetail({ product, slug }: { product: any; slug: string }) {
 
             <div className="flex items-center gap-4">
               <p
-                className={`text-2xl font-bold ${product.isOnSale ? "text-red-600" : "text-[#c8a97e]"}`}
+                className={`text-2xl font-bold ${product.isOnSale ? "text-red-600" : "text-[#C6A15B]"}`}
               >
                 {product.price}
               </p>
@@ -266,7 +266,7 @@ function ProductDetail({ product, slug }: { product: any; slug: string }) {
               </div>
               <button
                 onClick={handleAddToCart}
-                className="flex-1 py-3 bg-[#c8a97e] text-white text-sm font-semibold tracking-widest uppercase rounded-full hover:bg-[#b8966b] transition-colors"
+                className="flex-1 py-3 bg-[#C6A15B] text-white text-sm font-semibold tracking-widest uppercase rounded-full hover:bg-[#b8966b] transition-colors"
               >
                 Add to Cart
               </button>

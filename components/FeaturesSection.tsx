@@ -98,7 +98,7 @@ export default function FeaturesSection() {
               className="flex flex-col items-center text-center px-6 py-8"
             >
               {/* Icon */}
-              <div className="text-[#c8a97e] mb-4">{feature.icon}</div>
+              <div className="text-[#C6A15B] mb-4">{feature.icon}</div>
 
               {/* Title */}
               <h3

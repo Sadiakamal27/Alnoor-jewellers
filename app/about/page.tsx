@@ -18,13 +18,13 @@ export default function AboutPage() {
           />
         </div>
         <div className="relative z-10 max-w-3xl">
-          <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[#c8a97e] mb-4">
+          <p className="text-xs font-semibold tracking-[0.4em] uppercase text-[var(--brand-gold)] mb-4">
             Legacy Of Excellence
           </p>
           <h1 className="text-5xl md:text-7xl font-fancy text-white mb-6">
             Crafting Elegance Since 1995
           </h1>
-          <div className="w-20 h-px bg-[#c8a97e] mx-auto mb-6" />
+          <div className="w-20 h-px bg-[var(--brand-gold)] mx-auto mb-6" />
           <p className="text-gray-200 text-lg leading-relaxed font-light">
             Alnoor Jewellers has been at the forefront of exquisite
             craftsmanship and timeless designs for over three decades.
@@ -35,25 +35,25 @@ export default function AboutPage() {
       {/* Story Section */}
       <section className="py-24 px-4 sm:px-8 lg:px-16 container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative aspect-square">
+            <div className="relative aspect-square">
             <Image
               src="/bridal-sets/Eternal Glow Bridal Set.png"
               alt="Crafstmanship"
               fill
               className="object-cover shadow-2xl"
             />
-            <div className="absolute -bottom-8 -right-8 w-64 h-64 border-8 border-[#c8a97e]/20 -z-10" />
+            <div className="absolute -bottom-8 -right-8 w-64 h-64 border-8 border-[var(--brand-gold)]/20 -z-10" />
           </div>
 
           <div className="space-y-8">
             <div className="space-y-4">
-              <span className="text-[#c8a97e] font-semibold tracking-widest uppercase text-sm">
+              <span className="text-[var(--brand-gold)] font-semibold tracking-widest uppercase text-sm">
                 Our Story
               </span>
               <h2 className="text-4xl font-bold text-gray-900 leading-tight">
                 Where Tradition Meets <br /> Modern Luxury
               </h2>
-              <div className="w-12 h-px bg-[#c8a97e]" />
+              <div className="w-12 h-px bg-[var(--brand-gold)]" />
             </div>
 
             <p className="text-gray-600 leading-relaxed text-lg">
@@ -92,7 +92,7 @@ export default function AboutPage() {
         <div className="container mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="text-center space-y-4">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm mb-6">
-              <div className="w-8 h-8 rounded-full border-2 border-[#c8a97e]" />
+              <div className="w-8 h-8 rounded-full border-2 border-[var(--brand-gold)]" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 tracking-wide uppercase">
               Our Vision
@@ -105,7 +105,7 @@ export default function AboutPage() {
 
           <div className="text-center space-y-4">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm mb-6">
-              <div className="w-8 h-8 rounded-full border-2 border-[#c8a97e]" />
+              <div className="w-8 h-8 rounded-full border-2 border-[var(--brand-gold)]" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 tracking-wide uppercase">
               Our Mission
@@ -118,7 +118,7 @@ export default function AboutPage() {
 
           <div className="text-center space-y-4">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm mb-6">
-              <div className="w-8 h-8 rounded-full border-2 border-[#c8a97e]" />
+              <div className="w-8 h-8 rounded-full border-2 border-[var(--brand-gold)]" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 tracking-wide uppercase">
               Our Values
@@ -144,7 +144,7 @@ export default function AboutPage() {
         </p>
         <Link
           href="/contact"
-          className="inline-block bg-gray-900 text-white px-10 py-4 text-xs font-semibold tracking-widest uppercase hover:bg-[#c8a97e] transition-colors"
+          className="inline-block bg-gray-900 text-white px-10 py-4 text-xs font-semibold tracking-widest uppercase hover:bg-[var(--brand-gold)] transition-colors"
         >
           Book An Appointment
         </Link>

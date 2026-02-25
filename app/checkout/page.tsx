@@ -70,7 +70,7 @@ export default function CheckoutPage() {
           Add some luxury to your cart before checking out.
         </p>
         <Link href="/collections">
-          <Button style={{ backgroundColor: "#c8a97e" }}>
+          <Button style={{ backgroundColor: "#C6A15B" }}>
             Go to Collections
           </Button>
         </Link>
@@ -106,7 +106,7 @@ export default function CheckoutPage() {
                         name="firstName"
                         required
                         placeholder="John"
-                        className="rounded-none border-gray-200 focus:ring-[#c8a97e]"
+                        className="rounded-none border-gray-200 focus:ring-[#C6A15B]"
                       />
                     </div>
                     <div className="space-y-2">
@@ -193,8 +193,8 @@ export default function CheckoutPage() {
                   Payment Method
                 </h2>
                 <div className="space-y-4">
-                  <div className="flex items-center space-x-3 p-4 border border-[#c8a97e] bg-amber-50">
-                    <div className="w-4 h-4 rounded-full bg-[#c8a97e] border-4 border-white ring-1 ring-[#c8a97e]" />
+                  <div className="flex items-center space-x-3 p-4 border border-[#C6A15B] bg-amber-50">
+                    <div className="w-4 h-4 rounded-full bg-[#C6A15B] border-4 border-white ring-1 ring-[#C6A15B]" />
                     <span className="text-sm font-medium text-gray-900">
                       Cash on Delivery (COD)
                     </span>
@@ -237,7 +237,7 @@ export default function CheckoutPage() {
                             <h4 className="text-sm font-bold text-gray-900 truncate uppercase mt-1.5">
                               {item.name}
                             </h4>
-                            <p className="text-[10px] text-[#c8a97e] font-bold tracking-widest mb-1">
+                            <p className="text-[10px] text-[#C6A15B] font-bold tracking-widest mb-1">
                               {item.option}
                             </p>
                             <p className="text-xs text-gray-500">
@@ -256,7 +256,7 @@ export default function CheckoutPage() {
                         <span>Subtotal</span>
                         <span>Rs.{totalPrice.toLocaleString()}</span>
                       </div>
-                      <div className="flex justify-between text-sm text-gray-600">
+                          <div className="flex justify-between text-sm text-gray-600">
                         <span>Shipping</span>
                         <span className="text-green-600 font-medium uppercase tracking-widest text-[10px]">
                           Free
@@ -268,7 +268,7 @@ export default function CheckoutPage() {
                         </span>
                         <span
                           className="text-xl font-bold"
-                          style={{ color: "#c8a97e" }}
+                          style={{ color: "#C6A15B" }}
                         >
                           Rs.{totalPrice.toLocaleString()}
                         </span>
@@ -278,7 +278,7 @@ export default function CheckoutPage() {
                         type="submit"
                         disabled={loading}
                         className="w-full h-14 text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 shadow-xl mt-6 rounded-none"
-                        style={{ backgroundColor: "#c8a97e" }}
+                        style={{ backgroundColor: "#C6A15B" }}
                       >
                         {loading && (
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
